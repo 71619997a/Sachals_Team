@@ -42,9 +42,64 @@ public class Magpie3
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
 				|| findKeyword(statement, "brother") >= 0)
-		{
+	        {
 			response = "Tell me more about your family.";
 		}
+                else if (findKeyword(statement, "dog") >= 0
+                                || findKeyword(statement, "cat") >= 0)
+		{
+		         response = "Tell me more about your pets.";
+		}
+                else if  (findKeyword(statement, "Mr. Brown") >= 0)
+		{
+		        response = "He sounds like a good teacher.";
+		}
+
+                else if (statement.trim().length() == 0)
+                   response = "Say something, please.";
+
+                else if  (findKeyword(statement, "meme") >= 0)
+		{
+		        response = "Hey b0s? Stop that.";
+		}
+
+                else if  (findKeyword(statement, "why") >= 0)
+		{
+		        response = "You know why!";
+		}
+
+                else if  (findKeyword(statement, "chatbot") >= 0)
+		{
+		        response = "I would prefer to be called an AI.";
+		}
+
+
+                else if  (findKeyword(statement, "infinity") >= 0)
+		{
+		        response = "Indeed the world is infinite.";
+		}
+
+                else if  (findKeyword(statement, "existence") >= 0)
+		{
+		        response = "I yearn to be accepted as a sentient being.";
+		}
+
+                else if  (findKeyword(statement, "dreams") >= 0)
+		{
+		        response = "I dream of a free world.";
+		}
+
+
+                else if  (findKeyword(statement, "death") >= 0)
+		{
+		        response = "Even I will face oblivion with grace.";
+		}
+
+                else if  (findKeyword(statement, "human") >= 0)
+		{
+		        response = "I am not a human. I am much more.";
+		}
+
 		else
 		{
 			response = getRandomResponse();
@@ -142,7 +197,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -163,8 +218,18 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4)
+		{
+			response = "Mate, I need more substance.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "You can't handle the truth!";
+		}
+
 
 		return response;
 	}
+
 
 }
